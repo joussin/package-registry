@@ -20,6 +20,85 @@ Liste des packages & versions:
 }
 ````
 
+# Versioning & tagging:
+
+### Créer un tag:
+
+> git tag <tagname>
+
+
+### Créer un tag annotés:
+
+> git tag -a <tagname> -m "<msg>"
+ 
+
+### Liste tag:
+
+> git tag
+
+
+### Se placer sur un tag:
+
+> git checkout <tagname>
+
+
+### Push tag:
+
+> git push origin <tagname>
+
+> Pour faire un push de plusieurs tags simultanément, transmettez l'option --tags à la commande git push. Lorsqu'un autre utilisateur clone un dépôt ou en fait un pull, il reçoit les nouveaux tags.
+
+### Delete tag:
+
+> git tag -d <tagname>
+
+
+### ReTagging/Replacing old tags:
+
+> git tag -a -f <tagname> <commit>
+
+> Lorsque vous exécutez la commande ci-dessus, vous mappez le commit 15027957951b64cf874c3557a0f3547bd83b3ff6 à l'identifiant de tag v1.4. Tout contenu existant pour le tag v1.4 est écrasé.
+
+
+### Example:
+
+Simple tag:
+
+````shell
+git tag 0.0.1
+git push origin 0.0.1
+````
+
+Tag annotés:
+
+````shell
+git tag -a v1.4 -m "my version 1.4"
+git push origin v1.4
+git tag -a -f v1.4 15027957951b64cf874c3557a0f3547bd83b3ff6
+````
+
+Modifier un tag annoté:
+
+Dernier commit:
+````shell
+git rev-parse HEAD
+````
+
+Derniers commit: -n1 , -n2, -n3 ...
+````shell
+git log -n1 --format="%H"
+````
+
+````shell
+git tag
+git tag -a -f v1.4 15027957951b64cf874c3557a0f3547bd83b3ff6
+````
+
+
+
+
+
+
 
 
 ---
