@@ -1,6 +1,15 @@
 {
   "packages": {
     "joussin/package-template": {
+      "dev-master": {
+        "name": "joussin/package-template",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/joussin/package-template.git",
+          "type": "git",
+          "reference" : "master"
+        }
+      },
       "dev-develop": {
         "name": "joussin/package-template",
         "version": "dev-develop",
@@ -17,6 +26,19 @@
           "url": "https://github.com/joussin/package-template.git",
           "type": "git",
           "reference" : "0.0.1"
+        }
+      }
+    },
+
+
+    "joussin/php-container": {
+      "dev-develop": {
+        "name": "joussin/php-container",
+        "version": "dev-develop",
+        "source": {
+          "url": "https://github.com/joussin/php-container.git",
+          "type": "git",
+          "reference" : "develop"
         }
       }
     }
