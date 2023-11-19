@@ -1,0 +1,48 @@
+{
+  "packages": {
+
+    "vendor/package-name": {
+      "dev-branch": {
+        "name": "vendor/package-name",
+        "version": "dev-branch",
+        "source": {
+          "url": "https://github.com/vendor/package-name.git",
+          "type": "git",
+          "reference" : "branch"
+        }
+      },
+      "0.0.1": {
+        "name": "vendor/package-name",
+        "version": "0.0.1",
+        "source": {
+          "url": "https://github.com/vendor/package-name.git",
+          "type": "git",
+          "reference" : "0.0.1"
+        }
+      }
+    },
+
+
+    "vendor-2/package-name-2": {
+      "dev-branch": {
+        "name": "vendor-2/package-name-2",
+        "version": "dev-branch",
+        "source": {
+          "url": "https://github.com/vendor-2/package-name-2.git",
+          "type": "git",
+          "reference" : "branch"
+        }
+      },
+      "0.0.1": {
+        "name": "vendor-2/package-name-2",
+        "version": "0.0.1",
+        "source": {
+          "url": "https://github.com/vendor-2/package-name-2.git",
+          "type": "git",
+          "reference" : "0.0.1"
+        }
+      }
+    }
+
+  }
+}

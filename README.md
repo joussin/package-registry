@@ -1,103 +1,147 @@
 
-# Installation via Composer:
+
+# Installation des packages via ce faux 'registry':
+
+Liste des packages & versions:
+
+> https://raw.githubusercontent.com/joussin/package-registry/packages/packages.json
+
+````json
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://raw.githubusercontent.com/joussin/package-registry/packages/"
+    }
+  ],
+  "require": {
+    "joussin/package-template": "dev-develop"
+  }
+}
+````
 
 
-### Public repository:
 
-https repo url:
-> https://github.com/joussin/package-template.git
+---
 
 
-ssh repo url:
-> git@github.com:joussin/package-template.git
-
-
-### Private repository:
-
-PRIVATE https repo url with credentials:
-
-> https://{username}:{password}@github.com/joussin/package-template.git
-
-
-
-
-
-### Liaison des packages:
+# Documentation Composer & repositories:
 
 https://getcomposer.org/doc/04-schema.md#package-links
 https://getcomposer.org/doc/05-repositories.md
+https://getcomposer.org/doc/04-schema.md
 
 
-type `vcs` ou `git`:
 
+# Documentation Installation via Composer:
+
+
+### Installation via repository url: 
+
+Repositories `type` = `vcs` ou `git`:
 ````json
 {
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/joussin/package-template.git"
+      "url": "https://github.com/vendor/package-name.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/vendor-2/package-name-2.git"
     }
   ],
   "require": {
-    "joussin/package-template": "dev-develop"
+    "vendor/package-name": "dev-branch",
+    "vendor-2/package-name-2": "0.0.1"
   }
 }
 ````
 
-type `composer`:
+Public repository `https` url:
+> https://github.com/vendor/package-name.git
 
-http://packages.example.com = http://packages.example.com/packages.json
+Public repository `ssh` url:
+> git@github.com:vendor/package-name.git
 
+Private repository `ssh` url with credentials:
+> https://{username}:{password}@github.com/vendor/package-name.git
+
+
+### Installation via registry ou liste des packages repository: 
+
+
+Repositories `type` = `composer`:
 ````json
 {
   "repositories": [
     {
       "type": "composer",
-      "url": "http://packages.example.com"
+      "url": "http://packages.registry.com"
     }
   ],
   "require": {
-    "joussin/package-template": "dev-develop"
+    "vendor/package-name": "dev-branch",
+    "vendor-2/package-name-2": "0.0.1"
   }
 }
 ````
 
-Dans notre cas:
+Public registry url:
+> http://packages.registry.com
 
-ex: https://raw.githubusercontent.com/joussin/package-template/develop/packages.json
 
+Avec à la racine, le fichier `packages.json`:
+> http://packages.registry.com/packages.json:
 
-````json
-{
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://raw.githubusercontent.com/joussin/package-template/develop/"
-    }
-  ],
-  "require": {
-    "joussin/package-template": "dev-develop"
-  }
-}
-````
-
-packages.json:
-
+Le fichier `packages.json` contient la liste des packages et leur versions:
 ````json
 {
   "packages": {
-    "joussin/package-template": {
-      "dev-develop": {
-        "name": "joussin/package-template",
-        "version": "dev-develop",
+
+    "vendor/package-name": {
+      "dev-branch": {
+        "name": "vendor/package-name",
+        "version": "dev-branch",
         "source": {
-          "url": "https://github.com/joussin/package-template.git",
+          "url": "https://github.com/vendor/package-name.git",
           "type": "git",
-          "reference" : "develop"
+          "reference" : "branch"
         }
       },
-      "0.0.1": {}
+      "0.0.1": {
+        "name": "vendor/package-name",
+        "version": "0.0.1",
+        "source": {
+          "url": "https://github.com/vendor/package-name.git",
+          "type": "git",
+          "reference" : "0.0.1"
+        }
+      }
+    },
+
+
+    "vendor-2/package-name-2": {
+      "dev-branch": {
+        "name": "vendor-2/package-name-2",
+        "version": "dev-branch",
+        "source": {
+          "url": "https://github.com/vendor-2/package-name-2.git",
+          "type": "git",
+          "reference" : "branch"
+        }
+      },
+      "0.0.1": {
+        "name": "vendor-2/package-name-2",
+        "version": "0.0.1",
+        "source": {
+          "url": "https://github.com/vendor-2/package-name-2.git",
+          "type": "git",
+          "reference" : "0.0.1"
+        }
+      }
     }
+    
   }
 }
 ````
