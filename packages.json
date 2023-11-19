@@ -41,6 +41,23 @@
           "reference" : "develop"
         }
       }
-    }
+    },
+
+
+    "joussin/php-configuration": {
+      "dev-develop": {
+        "name": "joussin/php-configuration",
+        "version": "dev-develop",
+        "source": {
+          "url": "https://github.com/joussin/php-configuration.git",
+          "type": "git",
+          "reference" : "develop"
+        }
+      }
+    },
+
+
+
+
   }
 }
